@@ -77,23 +77,22 @@ const squadre = [
     }
 ];
   
-const numRand = (min , max) => Math.floor(Math.random()*(max - min + 1) + min);
+const randNum = (min , max ) => Math.floor(Math.random()*( max - min + 1) + min);
 
 const newAr = [];
 
 for (let i = 0; i < squadre.length; i++){
-    const {nome, falli} = squadre[i];
-    punti = numRand(2, 10);
-    falli = numRand(3, 15);
+    let {nome, falli} = squadre[i];
+    let punti = randNum(2, 10);
+    falli = randNum(3, 15);
     // per cambiare l'array di oggetti squadre
     squadre[i].punti = punti;
     squadre[i].falli = falli;
     // serve per costruire il nuovo array di oggetti
-    const elemento = { nome : nome , falliSubiti : falli};
+    const elemento = { nome , falli};
     newAr.push(elemento);
 }
 
 console.log(squadre);
 console.log(newAr);
 
-// NON FUNZIONA NON SO IL PERCHé
